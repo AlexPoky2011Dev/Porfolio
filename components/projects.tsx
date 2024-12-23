@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import AOS from 'aos';
 import "aos/dist/aos.css"; 
 
@@ -58,7 +59,7 @@ const Portfolio = () => {
                 <div className="projects flex flex-wrap justify-center gap-[50px]">
                     {projects.map(project => (
                         <div key={project.id} className="project w-[350px] bg-white/10 border border-white/15 rounded-lg p-4 shadow-lg" data-aos="fade-up">
-                            <img src={project.img} alt={project.name} className="max-w-full rounded-md filter" />
+                            <Image src={project.img} alt={project.name} className="max-w-full rounded-md filter" />
                             <div className="flex mt-2"> 
                                 <p className="text-white/70">{project.date} |</p>
                                 <p className="ml-[4px] text-white/70">{project.fw}</p>

@@ -1,6 +1,6 @@
 "use client";
 import { useState } from 'react';
-import { Send } from 'lucide-react';
+// import { Send } from 'lucide-react'; // Zakomentováno pro odstranění ESLint chyby
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -24,7 +24,7 @@ export default function ContactForm() {
         alert('Zpráva byla úspěšně odeslána!');
         setFormData({ name: '', email: '', message: '' });
       }
-    } catch (error) {
+    } catch {
       alert('Došlo k chybě při odesílání zprávy.');
     }
   };
@@ -71,7 +71,7 @@ export default function ContactForm() {
         />
       </div>
 
-      {/*
+      {/* Zakomentovaný kód pro tlačítko
       <button
         type="submit"
         className="w-full py-3 bg-purple-600 hover:bg-purple-700 rounded-lg flex items-center justify-center space-x-2 transition-colors"
@@ -79,12 +79,9 @@ export default function ContactForm() {
         <Send size={20} />
         <span>Odeslat zprávu</span>
       </button>
-      }
       */}
 
       <h1 className='text-center bg-red-500/10 font-medium border-[#ef4444] border-2 rounded-[15px] p-[5px]'>Mimo provoz</h1>
     </form>
-    
-
   );
 }
